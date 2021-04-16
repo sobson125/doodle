@@ -1,0 +1,8 @@
+POST tickets.dev/api/users/signup
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "test"
+}
+
