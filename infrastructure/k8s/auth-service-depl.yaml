@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: sobson/tickets/auth-service
+          image: sobson/tickets-auth
           env:
             - name: JWT_KEY
               valueFrom:

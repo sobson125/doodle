@@ -8,11 +8,19 @@ build:
   local:
     push: false
   artifacts:
-    - image: sobson/tickets/auth-service
+    - image: sobson/tickets-auth
       context: auth-service
       docker:
         dockerfile: Dockerfile
       sync:
         manual:
           - src: 'src/**/*.ts'
+            dest: .
+    - image: sobson/tickets-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
             dest: .
