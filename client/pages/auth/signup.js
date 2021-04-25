@@ -21,7 +21,7 @@ const SignUp = () => {
     };
 
     return <form onSubmit={onSubmit}>
-        <h1>signup</h1>
+        <h1>Sign up</h1>
         <div className="form-group">
             <label>Email address</label>
             <input value={email} onChange={event => setEmail(event.target.value)} type="text" className="form-control"/>
