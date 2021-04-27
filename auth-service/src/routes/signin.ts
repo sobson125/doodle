@@ -1,8 +1,7 @@
 import express, {Request, Response} from 'express';
 import {body} from 'express-validator';
-import {validateRequest} from '../middlewares/validate-request';
+import {BadRequestError, validateRequest} from '@sobsontickets/common';
 import {User} from '../models/user';
-import {BadRequestError} from '../errors/bad-request-error';
 import {PasswordManager} from '../services/password-manager';
 import jwt from 'jsonwebtoken';
 

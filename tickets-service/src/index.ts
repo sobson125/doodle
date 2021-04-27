@@ -6,7 +6,7 @@ const start = async () => {
         throw new Error('JWT KEY must be defined');
     }
     if (!process.env.MONGO_URI) {
-        throw new Error('JWT KEY must be defined');
+        throw new Error('MONGO_URI must be defined');
     }
     try {
         await mongoose.connect(process.env.MONGO_URI, {
@@ -19,8 +19,7 @@ const start = async () => {
         console.log(error);
     }
     app.listen(3000, () => {
-        console.log('port test again test');
-        console.log('another!!');
+        console.log('server working on port 3000');
     });
 };
 start();
