@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tickets-service-depl
+  name: orders-service-depl
 spec:
   replicas: 1
   selector:
@@ -13,11 +13,11 @@ spec:
         app: orders
     spec:
       containers:
-        - name: tickets
-          image: sobson/tickets-tickets
+        - name: orders
+          image: sobson/tickets-orders
           env:
             - name: MONGO_URI
-              value: 'mongodb://tickets-mongo-srv:27017/tickets'
+              value: 'mongodb://orders-mongo-srv:27017/orders'
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:
@@ -36,12 +36,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: tickets-service-srv
+  name: orders-service-srv
 spec:
   selector:
     app: orders
   ports:
-    - name: tickets
+    - name: orders
       protocol: TCP
       port: 3000
       targetPort: 3000
