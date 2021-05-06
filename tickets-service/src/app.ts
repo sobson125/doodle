@@ -16,10 +16,10 @@ app.use(cookieSession({
     secure: process.env.NODE_ENV !== 'test'
 }));
 app.use(currentUser);
+app.use(getAllTickets);
 app.use(getSingleTicket);
 app.use(createTicketRouter);
-app.use(updateTicketRouter)
-app.use(getAllTickets);
+app.use(updateTicketRouter);
 app.get('*', async (req, res) => {
     throw new NotFoundError();
 });

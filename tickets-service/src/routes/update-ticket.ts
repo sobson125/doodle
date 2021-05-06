@@ -17,7 +17,8 @@ router.put('/api/tickets/:id', reqquireAuth, [
             .withMessage('Price must be provided and must be greater than 0')
     ], validateRequest,
     async (req: Request, res: Response) => {
-        const ticket = await Ticket.findById(req.params.id);
+        const id = req.params.id
+        const ticket = await Ticket.findById(id);
         if (!ticket) {
             throw new NotFoundError();
         }

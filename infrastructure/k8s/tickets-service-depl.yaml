@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: orders
+      app: tickets
   template:
     metadata:
       labels:
-        app: orders
+        app: tickets
     spec:
       containers:
         - name: tickets
@@ -39,7 +39,7 @@ metadata:
   name: tickets-service-srv
 spec:
   selector:
-    app: orders
+    app: tickets
   ports:
     - name: tickets
       protocol: TCP
